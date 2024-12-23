@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#copies  database to a text file
+sqlite3 vehicle.db .dump > database_dump.txt
+#copies database to another database file
+cp vehicle.db backup_vehicle.db
+#create a new folder
+mkdir backup_folder
+#moves backup database to the new folder
+mv backup_vehicle.db backup_folder/
+#moves text file to backup folder
+mv database_dump.txt backup_folder/
+#list files in new folder
+ls backup_folder/
+#display disk usage of the new folder
+du -sh backup_folder/
+#create empty file
+touch backup_folder/notes.txt
+#rename file
+mv backup_folder/notes.txt backup_folder/important_notes.txt
+#remove file
+rm backup_folder/important_notes.txt
+
+#word counts the new file
+word_count()
+{
+   if [ -f "backup_folder/database_dump.txt" ]; then
+      wc -w backup_folder/database_dump.txt
+   else
+      echo "Dump file not found."
+   fi
+}
+
+word_count
+

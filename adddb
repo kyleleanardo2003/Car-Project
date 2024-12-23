@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sqlite3 vehicle.db <<EOF
+
+INSERT INTO Vehicle (Type, Make, Model, Year, Mileage, VIN, License_Plate) VALUES ( 'Car', 'Toyota', 'Corolla', 2019, 30000, 'ABC123456789XYZ00', 'ABC1234');
+INSERT INTO Vehicle (Type, Make, Model, Year, Mileage, VIN, License_Plate) VALUES ( 'Truck', 'Ford', 'F-150', 2018, 45000, 'DEF987654321ZYX00', 'XYZ9876');
+INSERT INTO Vehicle (Type, Make, Model, Year, Mileage, VIN, License_Plate) VALUES ( 'SUV', 'Honda', 'CR-V', 2020, 20000, 'GHI456123789YXZ00', 'LMN4321');
+INSERT INTO Vehicle (Type, Make, Model, Year, Mileage, VIN, License_Plate) VALUES ( 'Motorcycle', 'Harley-Davidson', 'Sportster', 2021, 10000, 'JKL789321456ZXY00', 'PQR5678');
+INSERT INTO Vehicle (Type, Make, Model, Year, Mileage, VIN, License_Plate) VALUES ( 'Van', 'Chevrolet', 'Express', 2017, 60000, 'MNO654987123YZX00', 'STU9012');
+
+EOF
+
